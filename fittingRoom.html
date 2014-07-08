@@ -1,31 +1,36 @@
 <div class="text-center">
-<h2>Abercrombie & Fitch</h2>
+<h2 class="brandTitle">Abercrombie & Fitch</h2>
 <h4>Welcome to fitting room! Try it on!</h4>
 <div class="selected">
-	<ul class="row">
-		<li ng-repeat="data in selectedData" class="span9 list">
+	<ul ng-animate=" 'animate' ">
+		<li  ng-repeat="data in selectedData" class="list" >
 			<img ng-src="{{data.img}}" alt="{{data}}"><br>
 			<button ng-click="match(data)">Match Me!</button>
 		</li>		
 	</ul>	
+
+	<div >
+		<img ng-src="{{matchData.img}}" alt="{{matchData}}">
+		<img ng-src="{{ran.img}}">
+		<button>&#10084; it!</button>
+		<button>Add to bag!</button>
+	</div>
 </div>
 
 
 <div class="row-fluid">
-<p>Guess you like: </p>
-  <div class="col-md-3">
+	<h5 class="text-left">Your friends also like: </h5>
+  <div class="col-md-3 , matchingList">
   	<img src="{{models[0]['img']}}"></img>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 , matchingList">
   	<img src="{{models[1]['img']}}"></img>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 , matchingList">
   	<img src="{{models[2]['img']}}"></img>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 , matchingList">
   	<img src="{{models[3]['img']}}"></img>
   </div>
-</div>
-
 </div>
 

@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('af', ['ngRoute']);
+var app = angular.module('af', ['ngRoute','ngAnimate']);
 app.selectedData = [];
 app.tops = [
     {
@@ -47,6 +47,29 @@ app.bottoms = [
  	 		'price': '$32'
  	 	}
 ];
+app.fakes = [
+    {
+    	'id': 'top1',
+    	'img': 'http://anf.scene7.com/is/image/anf/anf_78992_01_prod1?$category-anf$',
+    	'name': 'A&F Alyssa dress',
+      'desc': 'New Arrival',
+ 	 		'price': '$68'
+ 	 	},
+    {
+    	'id': 'top2',
+    	'img': "http://anf.scene7.com/is/image/anf/anf_78760_01_prod1?$category-anf$",
+    	'name': 'A&F Alyssa dress',
+      'desc': 'Flagship Exclusvie',
+ 	 		'price': '$78'
+ 	 	},
+    {
+    	'id': 'top3',
+    	'img': "http://anf.scene7.com/is/image/anf/anf_80551_01_prod1?$category-anf$",
+    	'name': 'A&F Super dress',
+      'desc': 'Online Exclusive & New Arrival',
+ 	 		'price': '$90'
+ 	 	},
+];
 app.models = [
 	{
 		'id': 'model1',
@@ -70,6 +93,7 @@ app.controller('listController', function($scope) {
 
 	$scope.tops = app.tops;
   $scope.bottoms = app.bottoms;
+  $scope.fakes = app.fakes;
   $scope.count = 0;
   $scope.selectedData = app.selectedData;
   $scope.add = function (selected) {
@@ -90,11 +114,38 @@ app.controller('fittingRoomController', function($scope){
 	$scope.selectedData = app.selectedData;
 	$scope.selectedDataImg = [];
 	$scope.models = app.models;
+	$scope.selectedtops = [];
+	$scope.selectedbots = [];
+
+	for (var i = 0; i < $scope.selectedData.length; i++) {
+		if($scope.selectedData[i].id.match(/top/)){
+			$scope.selectedtops.push($scope.selectedData[i]);
+		}else{
+			$scope.selectedbots.push($scope.selectedData[i]);
+		}
+	};
 
 	 $scope.match = function (data) {
-  	for (var i = 0; i < $scope.selectedData.length; i++) {
-  		$scope.selectedDataImg.push($scope.selectedData[i]['img']);
-  	};
+	 	$scope.matchData = data;
+	  if(data.id.match(/top/)){
+			var ran = Math.ceil(Math.random()* $scope.selectedbots.length);
+			var madeId = 'bot'+ String(ran);
+			for (var i = 0; i < $scope.selectedData.length; i++) {
+				if($scope.selectedData[i]['id'] === madeId){
+					$scope.ran = $scope.selectedData[i];
+					break;
+				}
+			};
+		}else{
+			var ran = Math.ceil(Math.random()* $scope.selectedtops.length);
+			var madeId = 'top'+ String(ran);
+			for (var i = 0; i < $scope.selectedData.length; i++) {
+				if($scope.selectedData[i]['id'] === madeId){
+					$scope.ran = $scope.selectedData[i];
+					break;
+				}
+			};
+		}
   };
 
 });
