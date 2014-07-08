@@ -19,18 +19,33 @@
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script> -->
 </head>
-<body ng-controller='listController'>
-<p>Abercrombie & Fitch</p>
-<ul>
-    <li ng-repeat="top in tops">
-      <img src="{{top.img}}" alt="This is picture 1">
-      <p>{{top.name}}</p>
-      <p>{{top.desc}}</p>
-      <p>{{top.price}}</p>
-      <button ng-click="add()">Add To Cart!</button>
-			<button ng-click="match()">Match Me!</button>
-    </li>
-  </ul>
+<body ng-controller='listController' class="text-center">
+<h2>Abercrombie & Fitch</h2>
+<ul class="col-md-4" >
+  <li ng-repeat="top in tops" class="thumbnail">
+    <img ng-src="{{top.img}}" alt="This is picture 1">
+    <p>{{top.name}}</p>
+    <p>{{top.desc}}</p>
+    <p>{{top.price}}</p>
+    <button ng-click="add($event)">Add To Bag!</button>
+		<button ng-click="match()">Match Me!</button>
+  </li>
+ </ul>
 
+<ul class="col-md-4">
+  <li ng-repeat="bottom in bottoms" class="thumbnail">
+    <img ng-src="{{bottom.img}}" alt="This is picture 1">
+    <p>{{bottom.name}}</p>
+    <p>{{bottom.desc}}</p>
+    <p>{{bottom.price}}</p>
+    <button ng-click="add($event)">Add To Bag!</button>
+		<button ng-click="match()">Match Me!</button>
+  </li>
+ </ul>
+
+<div class="col-md-4">
+	<p>Shopping Bag ({{count}})</p>
+
+</div>
 </body>
 </html>
