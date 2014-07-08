@@ -1,0 +1,33 @@
+<div class="text-center">
+<h2>Abercrombie & Fitch</h2>
+<ul class="col-md-3" >
+  <li ng-repeat="top in tops" class="thumbnail" >
+    <img ng-src="{{top.img}}" alt="This is picture 1">
+    <p>{{top.name}}</p>
+    <p>{{top.desc}}</p>
+    <p>{{top.price}}</p>
+    <button ng-click="add(top)">Add To closet!</button>
+		<button ng-click="detail()">Detail</button>
+  </li>
+ </ul>
+
+<ul class="col-md-3">
+  <li ng-repeat="bottom in bottoms" class="thumbnail" >
+    <img ng-src="{{bottom.img}}" alt="This is picture 1">
+    <p>{{bottom.name}}</p>
+    <p>{{bottom.desc}}</p>
+    <p>{{bottom.price}}</p>
+    <button ng-click="add(bottom)">Add To closet!</button>
+		<button ng-click="detail()">Detail</button>
+  </li>
+ </ul>
+
+<div class="col-md-6">
+	<p>Shopping Bag ({{count}})</p>
+	<div ng-repeat="data in selectedData">
+		<img ng-src="{{data.img}}" alt="{{data}}">
+		<button ng-click="match(data)">Match Me!</button>
+	</div>
+</div>
+
+</div>

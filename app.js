@@ -1,5 +1,6 @@
-var app = angular.module('af', []);
-
+'use strict';
+var app = angular.module('af', ['ngRoute']);
+app.selectedData = [];
 app.controller('listController', function($scope) {
 
 	$scope.tops = [
@@ -51,11 +52,10 @@ app.controller('listController', function($scope) {
   ];
 
   $scope.count = 0;
-  $scope.selectedData = [];
+  $scope.selectedData = app.selectedData;
   $scope.add = function (selected) {
   	//add to shoppingBag 
   	console.log("selected", selected);
-  	console.log(selected.inbag);
 		if(!selected.inbag){//inbag is not defined in data, it will be added after user click the add to bag, originally it is undefined, and then it is true
 	  	$scope.selectedData.push(selected);
   		$scope.count += 1;
@@ -65,7 +65,27 @@ app.controller('listController', function($scope) {
 		}
   };
 
-  $scope.match = function () {
+  $scope.match = function (data) {
   	alert("matching");
+  	console.log('data of matching', data);
   };
 });
+
+app.controller('closetController', function($scope){
+	$scope.test = "Hello closet";
+});
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/main', {
+        templateUrl: 'main.html',
+        controller: 'listController'
+      }).
+      when('/closet', {
+        templateUrl: 'closet.html',
+        controller: 'closetController'
+      }).
+      otherwise({
+        redirectTo: '/main'
+      });
+  }]);
