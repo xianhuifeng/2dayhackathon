@@ -1,5 +1,6 @@
 <div class="text-center">
 <h2>Abercrombie & Fitch</h2>
+
 <ul class="col-md-3" >
   <li ng-repeat="top in tops" class="thumbnail" >
     <img ng-src="{{top.img}}" alt="This is picture 1">
@@ -26,7 +27,6 @@
 	<p>Shopping Bag ({{count}})</p>
 	<div ng-repeat="data in selectedData">
 		<img ng-src="{{data.img}}" alt="{{data}}">
-		<button ng-click="match(data)">Match Me!</button>
 	</div>
 </div>
 
