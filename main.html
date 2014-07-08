@@ -1,39 +1,34 @@
 <div class="text-center">
-<h2 class="brandTitle">Abercrombie & Fitch</h2>
-
 <ul class="col-md-3" >
-  <li ng-repeat="top in tops">
-    <img ng-click="add(top)" ng-src="{{top.img}}" alt="This is picture 1"><br>
+  <li ng-repeat="top in tops" class="thumbnail">
+    <img ng-click="add(top)" ng-src="{{top.img}}" alt="This is picture 1" ><br>
     <strong>{{top.name}}</strong><br>
     <small>{{top.desc}}</small><br>
     <strong>{{top.price}}</strong><br>
-    <!-- <button class='btn btn-default' ng-click="add(top)">Add To closet!</button> -->
 		<button class='btn btn-default' ng-click="detail()">Detail</button><br>
   </li>
  </ul>
 
 <ul class="col-md-3">
-  <li ng-repeat="bottom in bottoms" >
+  <li ng-repeat="bottom in bottoms" class="thumbnail">
     <img ng-click="add(bottom)" ng-src="{{bottom.img}}" alt="This is picture 1"><br>
     <strong>{{bottom.name}}</strong><br>
     <small>{{bottom.desc}}</small><br>
     <strong>{{bottom.price}}</strong><br>
-    <!-- <button ng-click="add(bottom)">Add To closet!</button> -->
 		<button class='btn btn-default' ng-click="detail()">Detail</button>
   </li>
  </ul>
 
 <ul class="col-md-3">
-  <li ng-repeat="fake in fakes" >
+  <li ng-repeat="fake in fakes" class="thumbnail">
     <img ng-click="add(fake)" ng-src="{{fake.img}}" alt="This is picture 1"><br>
     <strong>{{fake.name}}</strong><br>
     <small>{{fake.desc}}</small><br>
     <strong>{{fake.price}}</strong><br>
-    <!-- <button ng-click="add(fake)">Add To closet!</button> -->
     <button class='btn btn-default' ng-click="detail()">Detail</button>
   </li>
  </ul>
-<div class="col-md-3 , selected">
+<div class="col-md-3">
 	<p>Your closet ({{count}})</p>
 	<div ng-repeat="data in selectedData">
 		<img ng-src="{{data.img}}" alt="{{data}}">

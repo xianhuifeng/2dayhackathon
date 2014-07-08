@@ -1,19 +1,18 @@
 <div class="text-center">
-<h2 class="brandTitle">Abercrombie & Fitch</h2>
 <h4>Welcome to fitting room! Try it on!</h4>
 <div class="selected">
-	<ul ng-animate=" 'animate' ">
+	<ul>
 		<li  ng-repeat="data in selectedData" class="list" >
 			<img ng-src="{{data.img}}" alt="{{data}}"><br>
-			<button ng-click="match(data)">Match Me!</button>
+			<button class="btn btn-default"ng-click="match(data)">Match Me!</button>
 		</li>		
 	</ul>	
 
 	<div >
 		<img ng-src="{{matchData.img}}" alt="{{matchData}}">
 		<img ng-src="{{ran.img}}">
-		<button>&#10084; it!</button>
-		<button>Add to bag!</button>
+		<button class='btn btn-info' ng-click="like()">&#10084; them!</button>
+		<button class='btn btn-default' data-id="{{NOTWORKINGYET}}" ng-click="addToShoppingBag($event)">Add both to bag!</button>
 	</div>
 </div>
 
