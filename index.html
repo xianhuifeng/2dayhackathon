@@ -23,7 +23,7 @@
 <p>Abercrombie & Fitch</p>
 <ul>
     <li ng-repeat="top in tops">
-      <img src="" alt="This is picture 1">
+      <img src="{{top.img}}" alt="This is picture 1">
       <p>{{top.name}}</p>
       <p>{{top.desc}}</p>
       <p>{{top.price}}</p>
@@ -31,27 +31,6 @@
 			<button ng-click="match()">Match Me!</button>
     </li>
   </ul>
-<!-- <div>
-	<img src="" alt="This is picture 1">
-	<p>Discription1</p>
-	<button ng-click="add()">Add To Cart!</button>
-	<button ng-click="match()">Match Me!</button>
-
-</div>
-<div>
-	<img src="" alt="This is picture 2">
-	<p>Discription2</p>
-	<button ng-click="add()">Add To Cart!</button>
-	<button ng-click="match()">Match Me!</button>
-
-</div>
-<div>
-	<img src="" alt="This is picture 3">
-	<p>Discription3</p>
-	<button ng-click="add()">Add To Cart!</button>
-	<button ng-click="match()">Match Me!</button>
-
-</div> -->
 
 </body>
 </html>
