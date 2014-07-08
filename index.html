@@ -22,12 +22,12 @@
 <body ng-controller='listController' class="text-center">
 <h2>Abercrombie & Fitch</h2>
 <ul class="col-md-4" >
-  <li ng-repeat="top in tops" class="thumbnail">
+  <li ng-repeat="top in tops" class="thumbnail" >
     <img ng-src="{{top.img}}" alt="This is picture 1">
     <p>{{top.name}}</p>
     <p>{{top.desc}}</p>
     <p>{{top.price}}</p>
-    <button ng-click="add($event)">Add To Bag!</button>
+    <button ng-click="add(top)">Add To Bag!</button>
 		<button ng-click="match()">Match Me!</button>
   </li>
  </ul>
@@ -38,7 +38,7 @@
     <p>{{bottom.name}}</p>
     <p>{{bottom.desc}}</p>
     <p>{{bottom.price}}</p>
-    <button ng-click="add($event)">Add To Bag!</button>
+    <button ng-click="add(bottom)">Add To Bag!</button>
 		<button ng-click="match()">Match Me!</button>
   </li>
  </ul>

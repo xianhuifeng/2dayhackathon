@@ -46,11 +46,11 @@ app.controller('listController', function($scope) {
 
 
   $scope.count = 0;
-  $scope.add = function ($event) {
+  $scope.add = function (selected) {
   	// alert('Added to your cart already!');
   	$scope.count += 1;
   	//add to shoppingBag 
-  	console.log('target',$event.target);
+  	console.log("selected", selected);
 
   };
 
