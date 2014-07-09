@@ -18,6 +18,10 @@ app.config(['$routeProvider',
         templateUrl: 'shoppingBag.html',
         controller: 'shoppingBagController'
       }).
+      when('/checkout', {
+        templateUrl: 'checkout.html',
+        controller: 'checkoutController'
+      }).
       otherwise({
         redirectTo: '/main'
       });

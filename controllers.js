@@ -30,7 +30,7 @@ afControllers.tops = [
  	 	},
 ];
 afControllers.bottoms = [
- 	 	{
+ 	{
  	 		'id': 'bot1',
     	'img': 'http://anf.scene7.com/is/image/anf/anf_76944_01_prod1?$category-anf$',
     	'name': 'A&F High Rise Short-Shorts',
@@ -101,8 +101,6 @@ afControllers.controller('listController', ['$scope',
 	  $scope.count = 0;
 	  $scope.selectedData = afControllers.selectedData;
 	  $scope.add = function (selected) {
-	  	//add to shoppingBag 
-	  	console.log("selected", selected);
 			if(!selected.inbag){//inbag is not defined in data, it will be added after user click the add to bag, originally it is undefined, and then it is true
 		  	$scope.selectedData.push(selected);
 	  		$scope.count += 1;
@@ -168,5 +166,20 @@ afControllers.controller('shoppingBagController', ['$scope',
 	function($scope){
 		$scope.test = 'hello';
 	}]);
+
+sfControllers.controller('checkoutController', ['$scope', 
+	function($scope){
+		$scope.testcheckout = 'checkingout hey';
+	}]);
+
+
+
+
+
+
+
+
+
+
 
 
